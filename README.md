@@ -1,2 +1,3 @@
-# Produkcja-ceramiki-SD-
+# Produkcja ceramiki SD
+
 Projekt na przedmiot sterowniki dedykowane
