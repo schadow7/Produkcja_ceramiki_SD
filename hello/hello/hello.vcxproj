@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{BD5FA36B-98C9-4D62-9F6D-A6E1E2BF4AC9}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="VisualGDBPackageDefinitions">
+    <ToolchainID>com.visualgdb.beaglebone</ToolchainID>
+    <ToolchainVersion>6.3.0/7.12/r1</ToolchainVersion>
+  </PropertyGroup>
+  <ImportGroup Label="VisualGDBFindComponents">
+    <Import Project="$(LOCALAPPDATA)\VisualGDB\FindComponents.props" />
+  </ImportGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakeIncludeSearchPath>..\..\..\..\..\..\SysGCC\beaglebone\arm-linux-gnueabihf\sysroot\usr\lib\arm-linux-gnueabihf\qt5\mkspecs\arm-linux-gnueabihf;..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf\qt5;..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf\qt5\QtWidgets;..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf\qt5\QtGui;..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf\qt5\QtCore;..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\include\c++\6;..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\include\c++\6\backward;..\..\..\..\..\..\sysgcc\beaglebone\lib\gcc\arm-linux-gnueabihf\6\include;..\..\..\..\..\..\sysgcc\beaglebone\lib\gcc\arm-linux-gnueabihf\6\include-fixed;..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\include;..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf;..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\sysroot\usr\include;Debug;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeForcedIncludes>$(ProjectDir)\gcc_Debug.h;$(VISUALGDB_DIR)\gcc_compat.h;$(NMakeForcedIncludes)</NMakeForcedIncludes>
+    <NMakePreprocessorDefinitions>__VisualGDB_CFG_Debug;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /build "$(ProjectPath)" "/solution:$(SolutionPath)"  "/config:$(Configuration)" "/platform:$(Platform)"</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)"  "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /rebuild "$(ProjectPath)" "/solution:$(SolutionPath)"  "/config:$(Configuration)" "/platform:$(Platform)"</NMakeReBuildCommandLine>
+    <NMakeOutput>$(ProjectDir)hello-Debug.vgdbsettings</NMakeOutput>
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakeIncludeSearchPath>..\..\..\..\..\..\SysGCC\beaglebone\arm-linux-gnueabihf\sysroot\usr\lib\arm-linux-gnueabihf\qt5\mkspecs\arm-linux-gnueabihf;..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf\qt5;..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf\qt5\QtWidgets;..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf\qt5\QtGui;..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf\qt5\QtCore;..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\include\c++\6;..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\include\c++\6\backward;..\..\..\..\..\..\sysgcc\beaglebone\lib\gcc\arm-linux-gnueabihf\6\include;..\..\..\..\..\..\sysgcc\beaglebone\lib\gcc\arm-linux-gnueabihf\6\include-fixed;..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\include;..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf;..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\sysroot\usr\include;Release;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeForcedIncludes>$(ProjectDir)\gcc_Release.h;$(VISUALGDB_DIR)\gcc_compat.h;$(NMakeForcedIncludes)</NMakeForcedIncludes>
+    <NMakePreprocessorDefinitions>__VisualGDB_CFG_Release;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /build "$(ProjectPath)" "/solution:$(SolutionPath)"  "/config:$(Configuration)" "/platform:$(Platform)"</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)"  "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /rebuild "$(ProjectPath)" "/solution:$(SolutionPath)"  "/config:$(Configuration)" "/platform:$(Platform)"</NMakeReBuildCommandLine>
+    <NMakeOutput>$(ProjectDir)hello-Release.vgdbsettings</NMakeOutput>
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ItemGroup>
+    <ClCompile Include="hello.cpp" />
+    <ClCompile Include="MainWindow.cpp" />
+    <None Include="MainWindow.ui" />
+    <ClInclude Include="MainWindow.h" />
+    <None Include="hello.pro" />
+    <None Include="debug.pro" />
+    <None Include="release.pro" />
+    <None Include="hello-Debug.vgdbsettings" />
+    <None Include="hello-Release.vgdbsettings" />
+  </ItemGroup>
+</Project>
