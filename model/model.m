@@ -29,13 +29,18 @@ a2=((n+1)*gs*cs*Tp)/(M*c);
 a1=m*v/M;
 a0=m*v*T0/M;
 
-%Odpalanie symulacji, wyjúcia jako serie czasowe
+%Odpalanie symulacji, wyj≈õcia jako serie czasowe
+load_system('model_nielin');
 set_param('model_nielin','Solver','ode15s','StopTime','10','MaxStep','1e-3');
-set_param('model_zlin','Solver','ode15s','StopTime','10','MaxStep','1e-3');
 sim('model_nielin');                                                            %Tnielin
-sim('model_zlin');                                                              %Tzlin
+close_system('model_nielin');
 
-%Prezentacja wynikÛw
+load_system('model_zlin');
+set_param('model_zlin','Solver','ode15s','StopTime','10','MaxStep','1e-3');
+sim('model_zlin');                                                              %Tzlin
+close_system('model_zlin');
+
+%Prezentacja wynik√≥w
 plot(Tnielin,'g');
 hold on
 plot(Tzlin,'r');
