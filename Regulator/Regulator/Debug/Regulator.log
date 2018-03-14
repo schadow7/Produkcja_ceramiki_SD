@@ -1,0 +1,3 @@
+﻿  VisualGDB: Run "C:\SysGCC\beaglebone\Qt\v5\qmake.exe  Regulator.pro CONFIGNAME=Debug" in directory "C:\Users\Naz\source\repos\Regulator\Regulator" on local machine
+  VisualGDB: Run "C:\SysGCC\beaglebone\bin\make.exe " in directory "C:\Users\Naz\source\repos\Regulator\Regulator" on local machine
+  make: Nothing to be done for `first'.
