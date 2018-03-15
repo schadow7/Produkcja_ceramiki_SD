@@ -9,7 +9,7 @@ T0=20;              %[^oC]
 Tp=1500;            %[^oC]
 cs=1000;            %[J/(kg*K)]
 gs=1;            %[kg/m^3]
-
+%costam
 A=(n+1)*gs*cs;
 B=m*v*c;
 qpracy=0:0.01:150;
