@@ -10,7 +10,7 @@
       <Transport>None</Transport>
     </BuildHost>
     <DeploymentHost>
-      <HostName>192.168.55.106</HostName>
+      <HostName>192.168.55.101</HostName>
       <Transport>SSH</Transport>
       <UserName>debian</UserName>
     </DeploymentHost>

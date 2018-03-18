@@ -11,6 +11,7 @@ rPID::rPID()
 	Ip = 0;
 	Dp = 0;
 	yp = 0;
+	SetURange(0, 100);
 }
 rPID::rPID(float nk, float nTi, float nTd)
 {
@@ -22,6 +23,7 @@ rPID::rPID(float nk, float nTi, float nTd)
 	Ip = 0;
 	Dp = 0;
 	yp = 0;
+	SetURange(0, 100);
 }
 rPID::rPID(float nk, float nTi, float nTd, float nN, float nb)
 {
@@ -33,6 +35,7 @@ rPID::rPID(float nk, float nTi, float nTd, float nN, float nb)
 	Ip = 0;
 	Dp = 0;
 	yp = 0;
+	SetURange(0, 100);
 }
 
 
@@ -46,15 +49,15 @@ float  rPID::ObliczSterowanie(float w, float y)
 	e = b*w - y;
 	P = k*e;
 	//anywindup
-	I= ((u <= 0) || (u >= 1000))? 0.0 : Ip + k*Ti*e;
+	I = ((u <= Umin) || (u >= Umax)) ? 0.0 : Ip + k*Ti*e;
 	//I = Ip + k*Ti*e;
 	D = Td / (Td + N)*(Dp - k*N*(y - yp));
 	Dp = D;
 	Ip = I;
 	u= P + I + D;
 	//ograniczenie sterowania
-	u = (u >= 1000) ? 1000 : u;
-	u = (u < 0) ? 0 : u;
+	u = (u >= Umax) ? Umax : u;
+	u = (u < Umin) ? Umin : u;
 	return u;
 }
 
@@ -88,4 +91,18 @@ void rPID::SetTi(float w)
 void rPID::SetTd(float w)
 {
 	Td= w;
+}
+
+void rPID::SetURange(float min, float max)
+{
+	Umax = max;
+	Umin = min;
+}
+
+
+void rPID::Reset()
+{
+	Ip = 0;
+	Dp = 0;
+	yp = 0;
 }
