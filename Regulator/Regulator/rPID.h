@@ -2,7 +2,8 @@
 class rPID
 {
 	float k, Ti, Td, N, b;
-	float yp, Ip, Dp; 
+	float yp, Ip, Dp;  //wartoœci z poprzedniej iteracji
+	float Umax, Umin;
 public:
 	rPID();
 	rPID(float k, float Ti, float Td);
@@ -14,6 +15,8 @@ public:
 	void Setk(float w);
 	void SetTi(float w);
 	void SetTd(float w);
+	void SetURange(float min, float max);
+	void Reset();
 	~rPID();
 };
 

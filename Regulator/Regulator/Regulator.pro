@@ -5,7 +5,6 @@
 QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-
 TARGET = Regulator
 TEMPLATE = app
 
@@ -26,3 +25,4 @@ OBJECTS_DIR = $$DESTDIR
 MOC_DIR     = $$DESTDIR
 RCC_DIR     = $$DESTDIR
 UI_DIR      = $$DESTDIR
+

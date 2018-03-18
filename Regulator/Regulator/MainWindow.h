@@ -3,12 +3,13 @@
 
 #include <QMainWindow>
 #include <QTimer>
-#include "qcustomplot.h"
 #include "rPID.h"
+#include <QtCharts>
+#include <qchart.h>
 namespace Ui {
 class MainWindow;
 }
-
+//using namespace QtCharts;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -33,14 +34,24 @@ protected:
 private:
     Ui::MainWindow *ui;
 	rPID *reg;
-	QFormLayout* layout;
-	QWidget *window;
-	QWidget *w1;
+	QTabWidget *tabWidget;
+	QFormLayout* layout_main, *layout_settings, *layout_plot;
+	QWidget *tab1, *tab2, *tab3;
 	QTimer *timer;
 	float y=0, u=0;
 	QSpinBox *SpinBox_k;
 	QSpinBox *SpinBox_Ti;
 	QSpinBox *SpinBox_Td;
+	void Setlayout();
+	void Lsettings(QFormLayout*);
+	void Lmain(QFormLayout*);
+	void Lplot(QFormLayout*);
+	
+	 QLineSeries *series;
+	void setPlot();
+	QChartView *chartView;
+	QChart *chart; 
+	
 };
 
 	
