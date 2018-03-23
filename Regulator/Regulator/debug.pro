@@ -7,7 +7,7 @@ CONFIG += debug
 
 DEFINES += 
 LIBS += 
-INCLUDEPATH += 
+INCLUDEPATH += ../../../../../../SysGCC/beaglebone/arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf/qt5/QtCharts
 QMAKE_LFLAGS += 
 QMAKE_CXXFLAGS += -ggdb 
 QMAKE_CFLAGS += -ggdb 

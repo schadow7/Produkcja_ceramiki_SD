@@ -1231,31 +1231,31 @@
 #endif
 
 // --- Include directories begin --- //
-//..\..\..\..\..\..\SysGCC\beaglebone\arm-linux-gnueabihf\sysroot\usr\lib\arm-linux-gnueabihf\qt5\mkspecs\arm-linux-gnueabihf
+//$(TOOLCHAIN_ROOT)\arm-linux-gnueabihf\sysroot\usr\lib\arm-linux-gnueabihf\qt5\mkspecs\arm-linux-gnueabihf
 //.
-//..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf\qt5
-//..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf\qt5\QtWidgets
-//..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf\qt5\QtGui
-//..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf\qt5\QtCore
-//..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\include\c++\6
-//..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\include\c++\6\backward
-//..\..\..\..\..\..\sysgcc\beaglebone\lib\gcc\arm-linux-gnueabihf\6\include
-//..\..\..\..\..\..\sysgcc\beaglebone\lib\gcc\arm-linux-gnueabihf\6\include-fixed
-//..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\include
-//..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf
-//..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\sysroot\usr\include
+//$(TOOLCHAIN_ROOT)\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf\qt5
+//$(TOOLCHAIN_ROOT)\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf\qt5\QtWidgets
+//$(TOOLCHAIN_ROOT)\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf\qt5\QtGui
+//$(TOOLCHAIN_ROOT)\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf\qt5\QtCore
+//$(TOOLCHAIN_ROOT)\arm-linux-gnueabihf\include\c++\6
+//$(TOOLCHAIN_ROOT)\arm-linux-gnueabihf\include\c++\6\backward
+//$(TOOLCHAIN_ROOT)\lib\gcc\arm-linux-gnueabihf\6\include
+//$(TOOLCHAIN_ROOT)\lib\gcc\arm-linux-gnueabihf\6\include-fixed
+//$(TOOLCHAIN_ROOT)\arm-linux-gnueabihf\include
+//$(TOOLCHAIN_ROOT)\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf
+//$(TOOLCHAIN_ROOT)\arm-linux-gnueabihf\sysroot\usr\include
 // --- Include directories end --- //
 
 
 // --- Library directories begin --- //
-//..\..\..\..\..\..\sysgcc\beaglebone\lib\gcc\arm-linux-gnueabihf\6
-//..\..\..\..\..\..\sysgcc\beaglebone\lib\gcc\arm-linux-gnueabihf
-//..\..\..\..\..\..\sysgcc\beaglebone\lib\gcc
-//..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\lib
-//..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\sysroot\lib\arm-linux-gnueabihf
-//..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\sysroot\lib
-//..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\sysroot\usr\lib\arm-linux-gnueabihf
-//..\..\..\..\..\..\sysgcc\beaglebone\arm-linux-gnueabihf\sysroot\usr\lib
+//$(TOOLCHAIN_ROOT)\lib\gcc\arm-linux-gnueabihf\6
+//$(TOOLCHAIN_ROOT)\lib\gcc\arm-linux-gnueabihf
+//$(TOOLCHAIN_ROOT)\lib\gcc
+//$(TOOLCHAIN_ROOT)\arm-linux-gnueabihf\lib
+//$(TOOLCHAIN_ROOT)\arm-linux-gnueabihf\sysroot\lib\arm-linux-gnueabihf
+//$(TOOLCHAIN_ROOT)\arm-linux-gnueabihf\sysroot\lib
+//$(TOOLCHAIN_ROOT)\arm-linux-gnueabihf\sysroot\usr\lib\arm-linux-gnueabihf
+//$(TOOLCHAIN_ROOT)\arm-linux-gnueabihf\sysroot\usr\lib
 // --- Library directories begin --- //
 
 #pragma clang diagnostic pop
