@@ -15,7 +15,7 @@ CXX           = C:/SysGCC/beaglebone/bin/arm-linux-gnueabihf-g++.exe
 DEFINES       = -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -Wno-psabi -ggdb -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -Wno-psabi -ggdb -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -IC:/SysGCC/beaglebone/arm-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/arm-linux-gnueabihf -I. -isystem C:/sysgcc/beaglebone/arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf/qt5 -isystem C:/sysgcc/beaglebone/arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -isystem C:/sysgcc/beaglebone/arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf/qt5/QtGui -isystem C:/sysgcc/beaglebone/arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf/qt5/QtCore -IDebug -IDebug
+INCPATH       = -IC:/SysGCC/beaglebone/arm-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/arm-linux-gnueabihf -I. -I../../../../../../SysGCC/beaglebone/arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf/qt5/QtCharts -isystem C:/sysgcc/beaglebone/arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf/qt5 -isystem C:/sysgcc/beaglebone/arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -isystem C:/sysgcc/beaglebone/arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf/qt5/QtGui -isystem C:/sysgcc/beaglebone/arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf/qt5/QtCore -IDebug -IDebug
 QMAKE         = C:/SysGCC/beaglebone/Qt/v5/qmake.exe
 DEL_FILE      = del
 CHK_DIR_EXISTS= if not exist
@@ -262,11 +262,12 @@ compiler_rcc_clean:
 compiler_moc_header_make_all: Debug/moc_MainWindow.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) Debug/moc_MainWindow.cpp
-Debug/moc_MainWindow.cpp: qcustomplot.h \
-		rPID.h \
+Debug/moc_MainWindow.cpp: rPID.h \
+		../../../../../../SysGCC/beaglebone/arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf/qt5/QtCharts/QtCharts \
+		../../../../../../SysGCC/beaglebone/arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf/qt5/QtCharts/qchart.h \
 		MainWindow.h \
 		C:/SysGCC/beaglebone/Qt/v5/moc.exe
-	'C:\SysGCC\beaglebone\Qt\v5\moc.exe' $(DEFINES) -IC:/SysGCC/beaglebone/arm-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/arm-linux-gnueabihf -IC:/Users/Naz/source/repos/Regulator/Regulator -Ic:/sysgcc/beaglebone/arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf/qt5 -Ic:/sysgcc/beaglebone/arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -Ic:/sysgcc/beaglebone/arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf/qt5/QtGui -Ic:/sysgcc/beaglebone/arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf/qt5/QtCore -Ic:/sysgcc/beaglebone/arm-linux-gnueabihf/include/c++/6 -Ic:/sysgcc/beaglebone/arm-linux-gnueabihf/include/c++/6/backward -Ic:/sysgcc/beaglebone/lib/gcc/arm-linux-gnueabihf/6/include -Ic:/sysgcc/beaglebone/lib/gcc/arm-linux-gnueabihf/6/include-fixed -Ic:/sysgcc/beaglebone/arm-linux-gnueabihf/include -Ic:/sysgcc/beaglebone/arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf -Ic:/sysgcc/beaglebone/arm-linux-gnueabihf/sysroot/usr/include MainWindow.h -o Debug/moc_MainWindow.cpp
+	'C:\SysGCC\beaglebone\Qt\v5\moc.exe' $(DEFINES) -IC:/SysGCC/beaglebone/arm-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/arm-linux-gnueabihf -IC:/Users/Naz/source/repos/Regulator/Regulator -IC:/SysGCC/beaglebone/arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf/qt5/QtCharts -Ic:/sysgcc/beaglebone/arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf/qt5 -Ic:/sysgcc/beaglebone/arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -Ic:/sysgcc/beaglebone/arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf/qt5/QtGui -Ic:/sysgcc/beaglebone/arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf/qt5/QtCore -Ic:/sysgcc/beaglebone/arm-linux-gnueabihf/include/c++/6 -Ic:/sysgcc/beaglebone/arm-linux-gnueabihf/include/c++/6/backward -Ic:/sysgcc/beaglebone/lib/gcc/arm-linux-gnueabihf/6/include -Ic:/sysgcc/beaglebone/lib/gcc/arm-linux-gnueabihf/6/include-fixed -Ic:/sysgcc/beaglebone/arm-linux-gnueabihf/include -Ic:/sysgcc/beaglebone/arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf -Ic:/sysgcc/beaglebone/arm-linux-gnueabihf/sysroot/usr/include MainWindow.h -o Debug/moc_MainWindow.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -288,13 +289,15 @@ compiler_clean: compiler_moc_header_clean compiler_uic_clean
 ####### Compile
 
 Debug/Regulator.o: Regulator.cpp MainWindow.h \
-		qcustomplot.h \
-		rPID.h
+		rPID.h \
+		../../../../../../SysGCC/beaglebone/arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf/qt5/QtCharts/QtCharts \
+		../../../../../../SysGCC/beaglebone/arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf/qt5/QtCharts/qchart.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Debug/Regulator.o Regulator.cpp
 
 Debug/MainWindow.o: MainWindow.cpp MainWindow.h \
-		qcustomplot.h \
 		rPID.h \
+		../../../../../../SysGCC/beaglebone/arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf/qt5/QtCharts/QtCharts \
+		../../../../../../SysGCC/beaglebone/arm-linux-gnueabihf/sysroot/usr/include/arm-linux-gnueabihf/qt5/QtCharts/qchart.h \
 		Debug/ui_MainWindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Debug/MainWindow.o MainWindow.cpp
 

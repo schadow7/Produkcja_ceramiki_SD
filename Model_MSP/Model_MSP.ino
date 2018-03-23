@@ -1,10 +1,3 @@
-#define LEDR RED_LED
-#define LEDG GREEN_LED
-#define PB PUSH2
-
-int buttonState = 0.0;
-int LICZBA = 0.0;
-
 //Dane
 double M = 1000.0;             //[kg]
 double c = 800.0;              //[J/(kg*K)]
@@ -12,9 +5,9 @@ double m = 300.0;              //[kg/m]
 double n = 7.0;                //[1]
 double v = 1.0;                //[m/h]
 double T0 = 20.0;              //[^oC]
-double Tp = 1200.0;            //[^oC]
+double Tp = 1500.0;            //[^oC]
 double cs = 1000.0;            //[J/(kg*K)]
-double gs = 1.15;              //[kg/m^3]
+double gs = 1.0;               //[kg/m^3]
 
 //dTemp = a0 + a1*Temp + a2*q + a3*q*Temp;
 double a0 = m*v*T0/M;
@@ -25,25 +18,31 @@ double a3 = -(n+1)*gs*cs/M/c;
 double q = 10.0; //placeholder sterowanie
 double Temp = 0.0; //wyjscie
 double dTemp = 0.0; //zmiana wyjscia
-double h = 0.01; //krok calkowania
+double h = 1.0; //krok calkowania
+
+bool flaga = false;
 
 
-void setup() {                
-  pinMode(LEDR, OUTPUT); 
-  pinMode(LEDG, OUTPUT);   
-  pinMode(PB, INPUT_PULLUP);
-  Serial.begin(9600); 
+void setup(){
+  CCTL0 = CCIE;
+  TACCR0 = 15540;
+  TACTL = TASSEL_1 + MC_2;
+  Serial.begin(9600);
 }
 
 
-void loop() {
+void loop(){
+  if(flaga){
+    flaga = false;
+    Serial.print(String(Temp));
+  }
+}
 
-  dTemp = a0 + a1*Temp + a2*q + a3*q*Temp;
-  Temp = Temp + dTemp*h;
 
-  Serial.println(String("\nTemp = "));
-  Serial.println(String(Temp));
-  Serial.println(String("\n"));
-  
-  delay(10);
+#pragma vector=TIMER0_A0_VECTOR
+__interrupt void Timer_A(void){
+    flaga = true;
+    dTemp = a0 + a1*Temp + a2*q + a3*q*Temp;
+    Temp = Temp + dTemp*h;
+    TACCR0 += 15540;
 }
