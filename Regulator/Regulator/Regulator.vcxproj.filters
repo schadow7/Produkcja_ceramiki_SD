@@ -48,10 +48,14 @@
     <ClCompile Include="rPID.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
+    <ClCompile Include="serial.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Regulator.pro" />
     <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="rPID.h">

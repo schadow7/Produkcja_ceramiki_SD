@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[5];
-    char stringdata[37];
+    char stringdata[27];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -30,13 +30,13 @@ struct qt_meta_stringdata_MainWindow_t {
 static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
     {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
-QT_MOC_LITERAL(1, 11, 13), // "ButtonClicked"
-QT_MOC_LITERAL(2, 25, 0), // ""
-QT_MOC_LITERAL(3, 26, 4), // "SetW"
-QT_MOC_LITERAL(4, 31, 5) // "reset"
+QT_MOC_LITERAL(1, 11, 4), // "SetW"
+QT_MOC_LITERAL(2, 16, 0), // ""
+QT_MOC_LITERAL(3, 17, 5), // "reset"
+QT_MOC_LITERAL(4, 23, 3) // "Run"
 
     },
-    "MainWindow\0ButtonClicked\0\0SetW\0reset"
+    "MainWindow\0SetW\0\0reset\0Run"
 };
 #undef QT_MOC_LITERAL
 
@@ -54,12 +54,12 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   29,    2, 0x09 /* Protected */,
-       3,    0,   30,    2, 0x09 /* Protected */,
-       4,    0,   31,    2, 0x09 /* Protected */,
+       1,    1,   29,    2, 0x09 /* Protected */,
+       3,    0,   32,    2, 0x09 /* Protected */,
+       4,    0,   33,    2, 0x09 /* Protected */,
 
  // slots: parameters
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -71,13 +71,12 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
     if (_c == QMetaObject::InvokeMetaMethod) {
         MainWindow *_t = static_cast<MainWindow *>(_o);
         switch (_id) {
-        case 0: _t->ButtonClicked(); break;
-        case 1: _t->SetW(); break;
-        case 2: _t->reset(); break;
+        case 0: _t->SetW((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 1: _t->reset(); break;
+        case 2: _t->Run(); break;
         default: ;
         }
     }
-    Q_UNUSED(_a);
 }
 
 const QMetaObject MainWindow::staticMetaObject = {

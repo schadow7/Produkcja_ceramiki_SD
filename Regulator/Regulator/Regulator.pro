@@ -3,6 +3,7 @@
 #Visit http://visualgdb.com/makefiles for more details.
 
 QT       += core gui
+QT += printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = Regulator
@@ -10,8 +11,8 @@ TEMPLATE = app
 
 #By default the following file lists are updated automatically by VisualGDB.
 
-SOURCES   += Regulator.cpp MainWindow.cpp rPID.cpp
-HEADERS   += rPID.h MainWindow.h
+SOURCES   += Regulator.cpp MainWindow.cpp rPID.cpp serial.cpp qcustomplot.cpp
+HEADERS   += rPID.h MainWindow.h qcustomplot.h
 FORMS     += MainWindow.ui
 RESOURCES += 
 
