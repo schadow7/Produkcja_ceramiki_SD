@@ -51,9 +51,9 @@
     <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)"  "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
     <NMakeReBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /rebuild "$(ProjectPath)" "/solution:$(SolutionPath)"  "/config:$(Configuration)" "/platform:$(Platform)"</NMakeReBuildCommandLine>
     <NMakeOutput>$(ProjectDir)Regulator-Debug.vgdbsettings</NMakeOutput>
-    <IncludePath />
+    <IncludePath>C:\SysGCC\beaglebone\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf\qt5;$(IncludePath)</IncludePath>
     <ReferencePath />
-    <LibraryPath />
+    <LibraryPath>C:\SysGCC\beaglebone\arm-linux-gnueabihf\sysroot\usr\include\arm-linux-gnueabihf\qt5;$(LibraryPath)</LibraryPath>
     <NMakePreprocessorDefinitions>__VisualGDB_CFG_Debug;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -79,8 +79,10 @@
     <ClCompile Include="Regulator.cpp" />
     <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="rPID.cpp" />
+    <ClCompile Include="serial.cpp" />
     <ClInclude Include="rPID.h" />
     <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="MainWindow.ui" />
     <ClInclude Include="MainWindow.h" />
     <None Include="Regulator.pro" />

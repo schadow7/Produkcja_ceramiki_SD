@@ -5,14 +5,13 @@
 QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-
 TARGET = Regulator
 TEMPLATE = app
 
 #By default the following file lists are updated automatically by VisualGDB.
 
-SOURCES   += Regulator.cpp MainWindow.cpp
-HEADERS   += MainWindow.h
+SOURCES   += Regulator.cpp MainWindow.cpp rPID.cpp
+HEADERS   += rPID.h MainWindow.h
 FORMS     += MainWindow.ui
 RESOURCES += 
 
@@ -26,3 +25,4 @@ OBJECTS_DIR = $$DESTDIR
 MOC_DIR     = $$DESTDIR
 RCC_DIR     = $$DESTDIR
 UI_DIR      = $$DESTDIR
+

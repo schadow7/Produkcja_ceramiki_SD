@@ -3,9 +3,14 @@
 
 #include <QMainWindow>
 #include <QTimer>
+#include <QTextStream>
 #include "rPID.h"
 #include <QtCharts>
 #include <qchart.h>
+#include "qcustomplot.h"
+
+#include <unistd.h>
+#include <termios.h>
 namespace Ui {
 class MainWindow;
 }
@@ -19,9 +24,9 @@ public:
     ~MainWindow();
 
 protected slots:
-    void ButtonClicked();
-	void SetW();
+	void SetW(int);
 	void reset();
+	void Run();
 protected:
 	QSpinBox *SpinBox_w;
 	QLCDNumber *LCD_y;
@@ -35,25 +40,31 @@ private:
     Ui::MainWindow *ui;
 	rPID *reg;
 	QTabWidget *tabWidget;
-	QFormLayout* layout_main, *layout_settings, *layout_plot;
+	QFormLayout* layout_main, *layout_settings;
+	QGridLayout *layout_plot;
 	QWidget *tab1, *tab2, *tab3;
-	QTimer *timer;
-	float y=0, u=0;
+	QTimer *timer, *dataTimer;
+	float y=0, u=0,w=0;
 	QSpinBox *SpinBox_k;
 	QSpinBox *SpinBox_Ti;
 	QSpinBox *SpinBox_Td;
-	void Setlayout();
+	void setlayout();
+	void setControls();
 	void Lsettings(QFormLayout*);
 	void Lmain(QFormLayout*);
-	void Lplot(QFormLayout*);
+	void Lplot(QGridLayout*);
 	
-	 QLineSeries *series;
+	//wykres
+	QCustomPlot *customPlot;
 	void setPlot();
-	QChartView *chartView;
-	QChart *chart; 
-	
+	void plot(float,float);
+// komunikacja
+	void *buff; //bufor seriala
+	int fd; //indetyfikator portu
+	unsigned long *bytesreaded;
 };
 
 	
 	
 #endif // MAINWINDOW_H
+
